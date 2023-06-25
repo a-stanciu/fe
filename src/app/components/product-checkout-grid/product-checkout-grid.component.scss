@@ -1,0 +1,26 @@
+@use "../../util/variables" as v;
+
+.grid-container {
+  display: grid;
+  margin: 10px;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: v.$m-screen) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: v.$s-screen) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: v.$xs-screen) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

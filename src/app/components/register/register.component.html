@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Înregistrare</h1>
+<div mat-dialog-content class="fields-container">
+    <mat-form-field>
+        <mat-label>Prenume</mat-label>
+        <input matInput [(ngModel)]="user.firstName" required cdkFocusInitial id="firstNameField">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Nume</mat-label>
+        <input matInput [(ngModel)]="user.lastName" required id="lastNameField">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput [(ngModel)]="user.email" required id="emailField">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Număr de telefon</mat-label>
+        <input matInput [(ngModel)]="user.phoneNumber" required id="phoneNumberField">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Parolă</mat-label>
+        <input matInput [(ngModel)]="user.password" required (keydown.enter)="doRegister()"
+            [type]="hidePassword ? 'password' : 'text'" id="passwordField">
+        <button mat-icon-button matSuffix (click)="hidePassword= !hidePassword">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Anulare</button>
+    <button mat-raised-button color="accent" (click)="doRegister()" [disabled]="buttonDisabled()" id="registerButton">Înregistrare</button>
+</mat-dialog-actions>

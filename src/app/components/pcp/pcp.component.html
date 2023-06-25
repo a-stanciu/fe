@@ -1,0 +1,32 @@
+<div class="customization-box">
+    <!-- <p>Alege mărime:</p>
+    <mat-button-toggle-group name="dimensiune">
+        <mat-button-toggle>S</mat-button-toggle>
+        <mat-button-toggle>M</mat-button-toggle>
+        <mat-button-toggle>L</mat-button-toggle>
+        <mat-button-toggle>XL</mat-button-toggle>
+    </mat-button-toggle-group>
+    <p>Alege culoare:</p>
+    <mat-button-toggle-group name="culoare">
+        <mat-button-toggle>negru</mat-button-toggle>
+        <mat-button-toggle>roșu</mat-button-toggle>
+        <mat-button-toggle>verde</mat-button-toggle>
+    </mat-button-toggle-group> -->
+
+    <p>Alege varianta produsului:</p>
+    <mat-form-field>
+        <mat-label>Alege varianta</mat-label>
+        <mat-select id="variantSelector">
+            <mat-option *ngFor="let variant of product.variantList" value="{{variant.id}}" (click)="setVariantId(variant.id)" id="variant-{{variant.id}}">
+                <span *ngFor="let assignedValue of variant.assignedValueList">
+                    {{assignedValue.value.value}}
+                </span>
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="btn-container">
+        <button mat-raised-button color="accent" (click)="confirmAction()" id="addToCartBtn" mat-dialog-close [disabled]="variantId == null">Adaugă
+            în coș</button>
+    </div>
+</div>

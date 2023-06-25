@@ -1,0 +1,13 @@
+<mat-card>
+    <img mat-card-image src="{{cartProduct.pictureUrl}}" routerLink="/pdp/{{cartProduct.id}}">
+    <mat-card-title class="card-title" routerLink="/pdp/{{cartProduct.id}}">{{cartProduct.name}}</mat-card-title>
+    <mat-card-content routerLink="/pdp/{{cartProduct.id}}">
+        <p>{{cartProduct.description}}</p>
+        <p>Variantă: {{cartEntry.variant.assignedValueList[0].value.value}}, {{cartEntry.variant.assignedValueList[1].value.value}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <span class="price">{{cartProduct.price / 100}} lei</span>
+        <span class="spacer"></span>
+        <button mat-raised-button color="accent" (click)="deleteItem(cartEntry.id)">Șterge</button>
+    </mat-card-actions>
+</mat-card>

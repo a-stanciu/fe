@@ -1,0 +1,15 @@
+<div class="cart-container">
+    <div class="card-container">
+        <app-product-checkout-grid></app-product-checkout-grid>
+    </div>
+    <div class="order-total">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Total: {{price / 100}} lei</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <button mat-raised-button color="primary" routerLink="/checkout" id="proceedBtn">Plasează comanda</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

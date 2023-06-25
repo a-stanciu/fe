@@ -1,0 +1,25 @@
+@use '../../util/variables' as v;
+
+mat-toolbar {
+    position: fixed;
+    z-index: 2;
+}
+
+.menu-button {
+    visibility: collapse;
+}
+
+@media screen and (max-width: v.$xs-screen) {
+    .menu-button {
+        visibility: visible;
+    }
+
+    .user-actions {
+        visibility: collapse;
+    }
+}
+
+.second-row {
+    display: flex;
+    justify-content: center;
+}

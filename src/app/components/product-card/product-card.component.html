@@ -1,0 +1,10 @@
+<mat-card>
+    <img mat-card-image src="{{product.pictureUrl}}" routerLink="/pdp/{{product.id}}">
+    <mat-card-title class="card-title" routerLink="/pdp/{{product.id}}">{{product.name}}</mat-card-title>
+    <mat-card-content routerLink="/pdp/{{product.id}}">{{product.description}}</mat-card-content>
+    <mat-card-actions>
+        <span class="price">{{product.price / 100}} lei</span>
+        <span class="spacer"></span>
+        <button mat-raised-button color="accent" (click)="openCustomizationDialog()">Adaugă în coș</button>
+    </mat-card-actions>
+</mat-card>

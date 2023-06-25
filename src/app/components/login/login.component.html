@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Autentificare</h1>
+<div mat-dialog-content class="fields-container">
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput [(ngModel)]="user.username" required cdkFocusInitial id="emailField">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Parolă</mat-label>
+        <input matInput [(ngModel)]="user.password" required (keydown.enter)="doLogin()"
+            [type]="hidePassword ? 'password' : 'text'" id="passwordField">
+        <button mat-icon-button matSuffix (click)="hidePassword= !hidePassword">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="rememberMe">Ține-mă minte</mat-checkbox>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Anulare</button>
+    <button mat-raised-button color="accent" (click)="doLogin()" [disabled]="buttonDisabled()" id="loginButton">Autentificare</button>
+</mat-dialog-actions>

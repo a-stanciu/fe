@@ -1,0 +1,17 @@
+<div class="product-container">
+    <div class="product-info">
+        <img class="product-picture" src="{{product.pictureUrl}}">
+        <div class="main-content">
+            <span class="product-path">
+                {{product.subcategory.category.name}} > {{product.subcategory.name}} > {{product.name}}
+            </span>
+            <h2>{{product.name}}</h2>
+            <span class="description">{{product.description}}</span>
+            <span class="added-date">Adăugat la: {{product.addedDate.substring(0, 10)}}</span>
+            <span class="price">{{product.price / 100}} lei</span>
+            <button mat-raised-button color="primary" routerLink="/shirt-try-on/{{product.id}}"
+                matTooltip="Funcția este disponibilă doar pentru tricouri" [disabled]="product.subcategory.name == 'tricouri' ? false : true">Încearcă-mă!</button>
+            <app-pcp [product]="product"></app-pcp>
+        </div>
+    </div>
+</div>

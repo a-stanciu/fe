@@ -1,0 +1,21 @@
+@use "../../util/variables" as v;
+
+.cart-container {
+  display: flex;
+  min-width: 100%;
+}
+
+@media screen and (max-width: v.$s-screen) {
+  .cart-container {
+    flex-direction: column;
+  }
+}
+
+.product-card {
+  margin: 10px;
+}
+
+.order-total {
+  margin: 10px;
+  min-width: 25%;
+}

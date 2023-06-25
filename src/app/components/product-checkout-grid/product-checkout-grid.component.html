@@ -1,0 +1,5 @@
+<div class="grid-container">
+    <div class="product-card" *ngFor="let item of cartProducts; index as i">
+        <app-product-checkout-card [cartProduct]="item" [cartEntry]="cartEntries[i]"></app-product-checkout-card>
+    </div>
+</div>

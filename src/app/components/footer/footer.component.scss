@@ -1,0 +1,37 @@
+@use "../../util/variables" as v;
+
+.site-footer {
+  background-color: #3f51b5;
+  padding: 20px;
+  color: white;
+  flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px; /* Set a maximum width for the footer content */
+  margin: 0 auto; /* Center the footer content horizontally */
+}
+
+.footer-items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: v.$xs-screen) {
+  .footer-items {
+    flex-direction: column;
+  }
+}
+
+.footer-item {
+  margin-right: 20px;
+}
+
+.footer-item a {
+  color: white;
+}

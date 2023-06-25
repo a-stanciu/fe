@@ -1,0 +1,19 @@
+<div class="try-shirt-container">
+    <h2>Încearcă-ți noua haină înainte de a o cumpăra</h2>
+    <div class="layered">
+        <div class="webcam-container" *ngIf="!pictureTaken">
+            <webcam [height]="480" [width]="640" [trigger]="triggerObservable"
+                (imageCapture)="handleImage($event)">
+            </webcam>
+            <img src="../../../assets/human.png" class="human-shape">
+        </div>
+        <div *ngIf="pictureTaken && webcamImage" class="snapshot">
+            <img [src]="webcamImage.imageAsDataUrl" class="user-picture">
+            <img [src]="product.transparentPictureUrl" class="shirt-image">
+        </div>
+    </div>
+    
+    <button mat-raised-button color="accent" class="actionBtn" (click)="triggerSnapshot();">
+        {{getButtonName()}}
+    </button>
+</div>

@@ -1,0 +1,20 @@
+.searchbox-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+mat-form-field {
+  width: 95%;
+}
+
+mat-accordion {
+  width: 95%;
+}
+
+// Disable white space under the input box
+.my-form-field {
+    margin-bottom: -1.25em !important;
+}

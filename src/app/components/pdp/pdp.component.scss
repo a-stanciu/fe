@@ -1,0 +1,45 @@
+@use '../../util/variables' as v;
+
+.product-container {
+    margin: 10px;
+}
+
+.product-info {
+    display: flex;
+}
+
+.product-picture {
+    max-width: 40%;
+    height: fit-content;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        max-width: fit-content;
+        margin: 10px 0;
+    }
+}
+
+.variant-picker {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: v.$xs-screen) {
+    .product-info {
+        flex-direction: column;
+    }
+
+    .product-picture {
+        max-width: 100%;
+    }
+}
+
+.price {
+    font-weight: bold;
+}

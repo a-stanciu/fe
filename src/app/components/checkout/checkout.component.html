@@ -1,0 +1,18 @@
+<div class="checkout-container">
+    <h2>Finalizați comanda</h2>
+    <div class="address-form">
+        <p>Mai avem nevoie de câteva informații</p>
+        <div class="fields">
+            <mat-form-field>
+                <mat-label id="billAddrLabel">Adresa de facturare</mat-label>
+                <input matInput required [(ngModel)]="delivery" id="billAddrInput">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label id="deliverAddrLabel">Adresa de livrare</mat-label>
+                <input matInput required [(ngModel)]="billing" id="delivAddrInput">
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button color="accent" (click)="autocomplete()">Completează automat</button>
+    <button mat-raised-button color="primary" [disabled]="buttonDisabled()" (click)="placeOrder()" id="placeOrderBtn">Finalizează</button>
+</div>

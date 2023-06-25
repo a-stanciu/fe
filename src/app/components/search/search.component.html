@@ -1,0 +1,19 @@
+<div class="searchbox-container">
+    <mat-form-field class="my-form-field">
+        <input matInput type="text" placeholder="Începe căutarea!" [(ngModel)]="searchValue"
+            (keydown.enter)="search()">
+        <a mat-button matSuffix class="dark-element" (click)="search()">
+            <mat-icon matPrefix (keydown.enter)="search()">search</mat-icon>
+        </a>
+    </mat-form-field>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Caută după categorie</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-chip-listbox>
+                <mat-chip-option *ngFor="let n of chips" (click)="selectChip(n)">{{n}}</mat-chip-option>
+            </mat-chip-listbox>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
